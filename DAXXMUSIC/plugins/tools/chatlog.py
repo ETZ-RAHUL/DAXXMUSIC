@@ -29,14 +29,11 @@ async def join_watcher(_, message):
                 f"📝 ᴍᴜsɪᴄ ʙᴏᴛ ᴀᴅᴅᴇᴅ ɪɴ ᴀ ɴᴇᴡ ɢʀᴏᴜᴘ\n\n"
                 f"____________________________________\n\n"
                 f"📌 ᴄʜᴀᴛ ɴᴀᴍᴇ: {chat.title}\n"
-                f"🍂 ᴄʜᴀᴛ ɪᴅ: {chat.id}\n"
-                f"🔐 ᴄʜᴀᴛ ᴜsᴇʀɴᴀᴍᴇ: @{chat.username}\n"
-                f"🛰 ᴄʜᴀᴛ ʟɪɴᴋ: [ᴄʟɪᴄᴋ]({link})\n"
-                f"📈 ɢʀᴏᴜᴘ ᴍᴇᴍʙᴇʀs: {count}\n"
-                f"🤔 ᴀᴅᴅᴇᴅ ʙʏ: {message.from_user.mention}"
+                f"🍂 ᴄʜᴀᴛ ɪᴅ: {chat.id}"
+                
             )
             await app.send_photo(LOG_GROUP_ID, photo=random.choice(photo), caption=msg, reply_markup=InlineKeyboardMarkup([
-                [InlineKeyboardButton(f"sᴇᴇ ɢʀᴏᴜᴘ👀", url=f"{link}")]
+                [InlineKeyboardButton(f"ᴀᴅᴅ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ👀", url=f"http://t.me/missmisuBot?startgroup=new")]
             ]))
 
 @app.on_message(filters.left_chat_member)
